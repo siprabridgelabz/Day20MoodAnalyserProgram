@@ -10,21 +10,28 @@ namespace MoodAnalyserDay20
     {
         private string message;
 
-        public MoodAnalyser() //DEAFULT
+        public MoodAnalyser()
         {
 
         }
-        public MoodAnalyser(string message) //PARAMERTEIZED
+        public MoodAnalyser(string message)
         {
             this.message = message;
         }
-        public string AnalyseMood(string message)
+        public string AnalyseMood()
         {
-            if (message.ToLower().Contains("sad"))
+            try
             {
-                return "Sad Mood";
+                if (message.ToLower().Contains("sad"))
+                {
+                    return "Sad Mood";
+                }
+                else
+                {
+                    return "Happy Mood";
+                }
             }
-            else
+            catch
             {
                 return "Happy Mood";
             }
